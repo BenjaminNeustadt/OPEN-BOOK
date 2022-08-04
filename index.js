@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname + "/public")));
 app.use("/bootstrap", express.static(path.join(__dirname + "/node_modules/bootstrap/dist/css")))
 
 
-app.get("/openbook", (req, res) => {
+app.get("/", (req, res) => {
   res.render("index");
 });
 
