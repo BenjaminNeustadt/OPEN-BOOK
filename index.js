@@ -61,7 +61,7 @@ app.get("/sessions/new", (req, res) => {
 })
 
 app.all('*', (req, res) => {
-  res.status(404).send('<h1>404! Ed&OZ Page not found</h1>');  // res.status(404).send('<h1>404! Ed&OZ Page not found</h1>');
+  res.status(404).send('<h1>404! Page not found</h1>'); 
 })
 
 /**
