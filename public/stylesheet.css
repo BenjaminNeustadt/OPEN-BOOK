@@ -5,11 +5,31 @@
   font-style: normal;
 }
 
+@keyframes neon {
+  0% {
+    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+    0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+    0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+  }
+  50% {
+    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+    0 0 5px var(--shadow-color-light), 0 0 15px var(--shadow-color-light), 0 0 25px var(--shadow-color-light),
+    0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
+  }
+  100% {
+    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+    0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+    0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+  }
+}
+
 :root {
   --primary-color: #5c715e;
   --secondary-color: #b6cdbd;
   --tertiary-color: #ddeedf;
   --background-color: #f2f9f1;
+  --shadow-color: #ddeedf;
+  --shadow-color-light: #5c715e;
   --heading-font: 'LemonMilk';
   --body-font: 'Catamaran', sans-serif;
 }
@@ -19,9 +39,10 @@ body {
 }
 
 .title {
-  color: var(--primary-color);
+  color: var(--tertiary-color);
   font-family: var(--heading-font);
-  font-size: 70px;
+  animation: neon 3s infinite;
+  font-size: 80px;
   margin: 150px 0 50px 0;
   text-align: center;
 }
@@ -57,7 +78,7 @@ body {
   box-shadow: 6px 5px 5px #ddeedf;
   padding: 20px 20px;
   margin: 30px 20px 30px 0;
-  max-width: 255px;
+  max-width: 260px;
 }
 
 .bookshop-address {
