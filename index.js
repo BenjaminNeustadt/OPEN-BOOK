@@ -65,7 +65,7 @@ app.get("/sessions/new", (req, res) => {
  */
 
 // Jade path set-up
-app.set("views", path.join(__dirname, "frontend/views"));
+app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "jade");
 // bootstrap connection
 app.use(express.static(path.join(__dirname + "/public")));
