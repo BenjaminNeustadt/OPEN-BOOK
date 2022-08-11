@@ -10,7 +10,7 @@ const BookShopsController = {
   Display: (req, res) => {
     Bookshop.find((err, bookshops) => {
       const bookshopsWithIds = formatter.addIDS(bookshops);
-      res.render('index', { bookshops: bookshopsWithIds })
+      res.render('index', { bookshops: bookshopsWithIds, searched: false })
     });
   },
   SearchResults: (req, res) => {
@@ -20,9 +20,11 @@ const BookShopsController = {
         const bookshopsWithIds = formatter.addIDS(bookshops);
         const searchResults = new Search(searchQuery, bookshopsWithIds);
 
-        res.render('index', {bookshops: searchResults})
+        res.render('index', { bookshops: searchResults, searched: true })
       })
-    } 
+    } else {
+      res.redirect("/openbook")
+    }
   }
 }
 

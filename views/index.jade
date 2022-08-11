@@ -1,0 +1,48 @@
+include mixins
+extends ./layout
+block content 
+  h1.title OpenBook
+  h2.heading Support Independent Bookshops
+  
+  -if (searched) {
+  button#toggle(onclick='toggle()') Reset
+  -} else {
+  button#toggle(onclick='toggle()') Map
+  - }
+
+
+  div.search-container
+    div.container
+      div.row.search-row
+        div.search Search by name or genre
+        form.search-form(action="/openbook/search/results", method="get")
+          input.search-input(id="search", type="text", name="search", value="", placeholder="eg. brick lane, lgbtq, history") 
+          input.search-submit(id="submit-search", type="submit", value="Search")
+  
+  - if (searched) {
+      p#no-results-found #{bookshops.length} results found 
+  - }
+
+  - for (let i = 0; i < bookshops.length; i++) {
+    - if (((i == 0) || ((i +1) % 5 == 0)) && (i + 4 < bookshops.length)) {
+      div.container
+        div(class="row shop-row")
+          - for (let c = 0; c < 5; c ++) {
+              +column(i+c)
+          -}
+    - } else if ((i == 0) || ((i + 1) % 5 == 0)) {
+      -const counter = bookshops.length - i
+      div.container
+        div(class="row shop-row")
+          - for (let c = 0; c < counter; c ++) {
+            +column(i+c)
+          -}
+     -} 
+  - }
+    
+
+    div.hide-map(id="map", style="width: 95%; height: 750px; border-radius: 5px; margin: 20px auto")
+    
+    script(src='/js/map.js')
+    script(src='/js/toggle.js')
+

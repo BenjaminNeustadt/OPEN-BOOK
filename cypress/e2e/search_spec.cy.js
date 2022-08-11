@@ -89,6 +89,24 @@ describe("The search function", () => {
     cy.get('#search').type("rhythm in my soul");
     cy.get('#submit-search').click();
 
-    cy.get('#no-results-found').should('contain', 'No results found')
+    cy.get('#no-results-found').should('contain', '0 results found')
+  })
+
+  it("should reset to homepage after search", () => {
+    cy.visit('/openbook')
+    cy.get('#search').type("children");
+    cy.get('#submit-search').click();
+
+    cy.get('#toggle').should('contain', 'Reset')
+
+    cy.get('#toggle').click()
+    cy.url().should('eq', 'http://localhost:3030/openbook')
+  })
+
+  it("should redirect to home page when search input empty", () => {
+    cy.visit('/openbook')
+    cy.get('#submit-search').click();
+
+    cy.url().should('eq', 'http://localhost:3030/openbook')
   })
 })

@@ -47,6 +47,14 @@ body {
   text-align: center;
 }
 
+.heading {
+  color: var(--primary-color);
+  font-family: var(--body-font);
+  font-size: 18px;
+  opacity: 0.8;
+  text-align: center;
+}
+
 .bookshop-name {
   color: var(--secondary-color);
   font-family: var(--heading-font);
@@ -67,8 +75,12 @@ body {
   color: var(--primary-color);
 }
 
+.bookshop-name:focus {
+  outline: none;
+}
+
 .row {
-  padding: 0 20px;
+  padding: 0;
 }
 
 .bookshop-container {
@@ -77,22 +89,24 @@ body {
   border-radius: 4px;
   box-shadow: 6px 5px 5px #ddeedf;
   padding: 20px 20px;
-  margin: 30px 20px 30px 0;
- 
+  margin: 30px 0;
+  max-width: 240px;
 }
+
 
 .bookshop-address {
   color: var(--primary-color);
   font-family: var(--body-font);
   font-size: 17px;
   margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .opening-hours {
   color: var(--primary-color);
   font-family: var(--body-font);
   font-size: 17px;
-  margin-top: 10px;
+  font-weight: 800;
   text-align: left;
 }
 
@@ -106,43 +120,22 @@ body {
 
 .title-row {
   height: 50px;
+  padding: 0;
+}
+
+.shop-row {
+  justify-content: space-between;
+  padding: 0;
 }
 
 .mapboxgl-popup {
+  text-align: center;
   max-width: 400px;
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   }
 
 .address-row {
   height: 130px;
-}
-
-#no-results-found {
-  font-family: var(--heading-font);
-  text-align: center;
-  padding: 20px 20px;
-  color: var(--primary-color);
-  font-size: 20px;
-}
-
-.search-container {
-  text-align: center;
-  font-family: var(--body-font);
-  background-color: white;
-  border: 2px solid var(--primary-color);
-  border-radius: 4px;
-  box-shadow: 6px 5px 5px #ddeedf;
-  padding: 20px 60px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  margin-top: 0px;
-  max-width: fit-content;
-}
-
-h2 {
-  color: var(--primary-color);
-  font-family: var(--body-font);
 }
 
 .hide-map {
@@ -164,6 +157,8 @@ h2 {
   padding: 4px 8px;
   position: fixed;
   top: 100px;
+  right: 100px;
+  
   margin-left: 100px;
   margin-bottom: 50px;
   transition: ease-in-out 200ms;
@@ -173,4 +168,87 @@ h2 {
   background-color: var(--tertiary-color);
   border: 1px solid var(--tertiary-color);
   color: var(--primary-color);
+}
+
+.marker {
+  background-image: url('./images/location.png');
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#no-results-found {
+  font-family: var(--heading-font);
+  text-align: center;
+  padding: 20px 20px;
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.search-container {
+  font-family: var(--body-font);
+  margin-top: 100px;
+  
+}
+
+.search {
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+  font-size: 25px;
+}
+
+.search-input::placeholder {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  opacity: 0.7;
+}
+
+.search-input{
+  background-color: var(--background-color);
+  border: none;
+  border-bottom: 1px solid #5c715e;
+  color: var(--primary-color);
+  margin-right: 25px;
+  width: 230px;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-submit {
+  color: var(--primary-color);
+  background-color: var( --secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 3px;
+  box-shadow: 6px 5px 5px #ddeedf;
+  font-size: 18px;
+  font-weight:bold;
+  padding:10px, 20px;
+  transition: ease-in-out 250ms;
+}
+
+.search-submit:hover {
+  color: var(--tertiary-color);
+  background-color: var( --primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.search-form {
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.search-row {
+  padding: 0;
+}
+
+.address-row {
+  height: 180px;
+  margin-top: 10px;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
 }

@@ -2,14 +2,15 @@
 mixin column(i)
   div(class="col-sm bookshop-container text-center", id="#{bookshops[i].divId}")
     div.row.title-row
-        a(class='bookshop-name', href="#{bookshops[i].website}")  #{bookshops[i].name}
-      div.row
+        a(class='bookshop-name', href="#{bookshops[i].website}", target="_blank")  #{bookshops[i].name}
+      div.row.address-row
         p(class='bookshop-address')
           each item in bookshops[i].address
             | #{item}
             br
       div.row
         div(class='opening-hours') Opening hours
+      div.row
         div(class='times')
           each item in bookshops[i].openingHours
             | #{item}
