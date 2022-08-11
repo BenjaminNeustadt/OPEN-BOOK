@@ -19,9 +19,7 @@ block content
           input.search-input(id="search", type="text", name="search", value="", placeholder="eg. brick lane, lgbtq, history") 
           input.search-submit(id="submit-search", type="submit", value="Search")
   
-  - if (searched) {
-      p#no-results-found #{bookshops.length} results found 
-  - }
+ 
 
   - for (let i = 0; i < bookshops.length; i++) {
     - if (((i == 0) || ((i +1) % 5 == 0)) && (i + 4 < bookshops.length)) {
